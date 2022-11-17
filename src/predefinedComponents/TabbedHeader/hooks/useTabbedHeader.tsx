@@ -33,6 +33,7 @@ function useRenderHeader<T extends ScrollComponent>(props: TabbedHeaderPagerProp
     title,
     titleStyle,
     titleTestID,
+    renderForeground
   } = props;
   const horizontalScrollValue = useSharedValue(0);
   const onHorizontalPagerScroll = useWorkletCallback((e: NativeScrollEvent) => {
@@ -50,6 +51,9 @@ function useRenderHeader<T extends ScrollComponent>(props: TabbedHeaderPagerProp
         scrollHeight={scrollHeight}
         scrollValue={scrollValue}
         tabsContainerBackgroundColor={tabsContainerBackgroundColor}>
+        {renderForeground ? (
+          renderForeground()
+        ) : (
         <Foreground
           height={parallaxHeight}
           scrollValue={scrollValue}
@@ -58,6 +62,7 @@ function useRenderHeader<T extends ScrollComponent>(props: TabbedHeaderPagerProp
           titleStyle={titleStyle}
           titleTestID={titleTestID}
         />
+        )}
       </HeaderWrapper>
     );
   }, [

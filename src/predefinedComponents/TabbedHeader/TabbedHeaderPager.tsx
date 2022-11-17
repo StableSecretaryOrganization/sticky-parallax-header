@@ -34,7 +34,6 @@ export const TabbedHeaderPager = React.forwardRef<ScrollView, TabbedHeaderPagerP
       pagerProps,
       rememberTabScrollPosition,
       renderHeaderBar,
-      renderForeground,
       scrollEventThrottle = 16,
       ...rest
     } = props;
@@ -107,7 +106,7 @@ export const TabbedHeaderPager = React.forwardRef<ScrollView, TabbedHeaderPagerP
             onScrollEndDrag={onScrollEndDrag}
             onScroll={onScroll}
             overScrollMode={overScrollMode}
-            renderHeader={renderForeground ? renderForeground : renderHeader}
+            renderHeader={renderHeader}
             renderTabs={renderTabs}
             scrollEventThrottle={scrollEventThrottle}>
             <Pager

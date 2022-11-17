@@ -70,7 +70,6 @@ export interface TabbedHeaderPagerProps
   pageContainerStyle?: StyleProp<Animated.AnimateStyle<ViewStyle>>;
   pagerProps?: PagerProps & RefAttributes<PagerMethods>;
   rememberTabScrollPosition?: boolean;
-  renderForeground?: () => void;
 }
 
 export interface TabbedHeaderListProps<ItemT, SectionT>
